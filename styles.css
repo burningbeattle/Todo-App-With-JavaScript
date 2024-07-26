@@ -1,0 +1,181 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #89cff0, #ffdde1);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    width: 100%;
+    max-width: 400px;
+    color: #000000;
+    text-align: center;
+}
+
+header {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.taskInput {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.taskInput input {
+    width: 75%;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #000000;
+    transition: border-color 0.3s;
+}
+
+.taskInput input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.taskInput button {
+    padding: 10px 15px;
+    border: none;
+    background: rgba(0, 123, 255, 0.5);
+    color: #000000;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.taskInput button:hover {
+    background: rgba(0, 123, 255, 0.7);
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.filters span {
+    margin-right: 10px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.filters .active {
+    font-weight: bold;
+}
+
+.filters span:hover {
+    color: #ffeb3b;
+}
+
+.clear {
+    padding: 5px 15px;
+    background: rgba(220, 53, 69, 0.5);
+    color: #000000;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.clear:hover {
+    background: rgba(220, 53, 69, 0.7);
+}
+
+.taskBox {
+    list-style: none;
+    padding: 0;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.taskBox li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s;
+}
+
+.taskBox li:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.taskBox li.completed .task {
+    text-decoration: line-through;
+    color: #bbb;
+}
+
+.taskBox .task {
+    flex-grow: 1;
+    margin-left: 10px;
+}
+
+.taskBox .actions {
+    display: flex;
+    gap: 10px;
+}
+
+.taskBox .actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.taskBox .actions .edit {
+    color: #ffc107;
+}
+
+.taskBox .actions .edit:hover {
+    color: #ffeb3b;
+}
+
+.taskBox .actions .delete {
+    color: #dc3545;
+}
+
+.taskBox .actions .delete:hover {
+    color: #ff5252;
+}
+
+@media (max-width: 500px) {
+    .taskInput input {
+        width: 70%;
+    }
+
+    .filters span {
+        margin-right: 5px;
+    }
+
+    .taskBox li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .taskBox .actions {
+        margin-top: 5px;
+    }
+}
